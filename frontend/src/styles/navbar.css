@@ -1,0 +1,41 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: #1f2937;
+    color: white;
+}
+
+.logo h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+.nav-links button {
+    padding: 8px 16px;
+    border: none;
+    background: #ef4444;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-links button:hover {
+    background: #dc2626;
+}

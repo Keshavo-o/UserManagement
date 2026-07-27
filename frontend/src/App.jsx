@@ -20,7 +20,7 @@ function App() {
     <Routes>
       <Route path='/' element={<Login />}></Route>
       <Route path='/about' element={<About />}></Route>
-      <Route path='/home' element={<Home />}></Route>
+      <Route path='/home/*' element={<Home />}></Route>
 
       {/* if any path above is not found */}
       <Route path='*' element={<NotFound />}></Route>
