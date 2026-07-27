@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
+const addUser = require("../controllers/addUser.js")
+const showAll = require("../controllers/showAllUsers.js")
 
 // Routes
-router.get("/",(req,res)=>{
-    console.log("hii")
-    res.json({
-        success: true
-    })
-})
+router.get("/",showAll)
+router.post("/add",addUser)
 
 module.exports = router;

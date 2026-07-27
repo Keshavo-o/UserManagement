@@ -1,21 +1,33 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Routes, Route } from "react-router-dom"
+import { useEffect } from "react";
+import Navbar from "../components/navbar.jsx"
+import ShowUsers from "./homePages/ShowUsers.jsx"
+import AddUser from "./homePages/AddUser.jsx"
+
 function Home()
 {
     const navigate = useNavigate();
-    fetch("/api/check",{
+
+    useEffect(() => {
+    fetch("/api/check", {
         method: "GET",
         credentials: "include",
-
-    }).then(res => res.json())
-    .then(data => {
-        if(!data.success)
-        {
-            navigate("/")
-        }
     })
+        .then(res => res.json())
+        .then(data => {
+            if (!data.success) {
+                navigate("/");
+            }
+        });
+    }, [navigate]);
     return (
         <>
-        <h1>This is Home page</h1>
+        <Navbar />
+        <Routes>
+            <Route path='/' element={<ShowUsers />}></Route>
+            <Route path='/add' element={<AddUser />}></Route>
+
+        </Routes>
         </>
     )
 }

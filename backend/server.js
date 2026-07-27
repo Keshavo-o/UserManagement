@@ -1,8 +1,10 @@
 const express = require("express")
 const cors = require("cors")
+const mongoose = require("mongoose")
 const cookieParser = require("cookie-parser")
 const handlecheck = require("./services/handlecheck.js")
 const handlelogin = require("./services/handlelogin.js")
+const handlelogout = require("./services/handlelogout.js")
 const userRoutes = require("./routes/userRoute.js")
 const app = express()
 
@@ -24,9 +26,14 @@ app.get("/",(req,res) =>{
 
 app.get("/api/check",handlecheck)
 app.post("/api/login",handlelogin)
+app.get("/api/logout",handlelogout)
+
 
 app.use("/api/user",userRoutes)//as userRoutes is an Express router
 
+mongoose.connect("mongodb://localhost:27017/UserManager")
+.then(()=>console.log("MongoDB connected"))
+.catch((err)=>console.log("error occured: ",err))
 
 app.listen(3000,()=>{
     console.log("server started at 3000 port number")

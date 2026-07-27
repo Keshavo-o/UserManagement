@@ -5,7 +5,7 @@ function handlelogin(req,res)
     const name = req.body.username;
     const pwd = req.body.password;
     if(name == "Keshav" && pwd == "Keshav@123"){
-        console.log("success")
+        // console.log("success")
         res.cookie("user",name)
         return res.json({
         "success" : true
