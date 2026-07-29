@@ -71,7 +71,7 @@ function AddUsers() {
 
                 <div className="form-group">
                     <label>Role</label>
-                    <select onChange={handleChange} name="role" value={user.role}>
+                    <select onChange={handleChange} name="role" value={user.role} onChange={handleChange}>
                         <option value="">Select Role</option>
                         <option value="Backend developer">Backend developer</option>
                         <option value="HR">HR</option>

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "../components/navbar.jsx"
 import ShowUsers from "./homePages/ShowUsers.jsx"
 import AddUser from "./homePages/AddUser.jsx"
+import EditUser from "./homePages/EditUser.jsx";
 
 function Home()
 {
@@ -26,6 +27,7 @@ function Home()
         <Routes>
             <Route path='/' element={<ShowUsers />}></Route>
             <Route path='/add' element={<AddUser />}></Route>
+            <Route path='/edit/:id' element={<EditUser />}></Route>
 
         </Routes>
         </>

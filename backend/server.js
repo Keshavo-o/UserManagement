@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express")
 const cors = require("cors")
 const mongoose = require("mongoose")
@@ -5,8 +6,11 @@ const cookieParser = require("cookie-parser")
 const handlecheck = require("./services/handlecheck.js")
 const handlelogin = require("./services/handlelogin.js")
 const handlelogout = require("./services/handlelogout.js")
+const verifyotp = require("./services/verifyotp.js")
 const userRoutes = require("./routes/userRoute.js")
 const app = express()
+
+
 
 app.use(cors())
 app.use(express.json())
@@ -27,6 +31,8 @@ app.get("/",(req,res) =>{
 app.get("/api/check",handlecheck)
 app.post("/api/login",handlelogin)
 app.get("/api/logout",handlelogout)
+app.get("/api/otp",verifyotp)
+
 
 
 app.use("/api/user",userRoutes)//as userRoutes is an Express router
