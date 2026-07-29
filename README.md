@@ -1,3 +1,5 @@
+## Instructions :
+1) must create .env file with - JWT_SECRET, EMAIL_PASS and EMAIL
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/79a22fe6-2842-4fed-98f9-9110ef9659dd" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/77957a83-e46f-4af8-91f9-3f6c73415c25" />
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/d4f6907b-78d0-489d-9c3d-fdc91839e220" />
